@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner k=new Scanner(System.in);
+	    int x,y;
+	    x=k.nextInt();
+	    y=k.nextInt();
+	    int[] a=new int[x];
+	    int[] b=new int[y];
+	    for(int i=0;i<x;i++)
+	    {
+	        a[i]=k.nextInt();
+	    }
+	    for(int i=0;i<y;i++)
+	    {
+	        b[i]=k.nextInt();
+	    }
+	    int count=0;
+	    for(int i=0;i<y;i++)
+	    {
+	        for(int j=0;j<x;j++)
+	        {
+	            if(b[i]==a[j])
+	            {
+	                count++;
+	            }
+	        }
+	    }
+		if(count==y)
+		{
+		    System.out.println(x);
+		}
+		else
+		{
+		    int d=y-count;
+		    System.out.println(x+d);
+		}
+	}
+}

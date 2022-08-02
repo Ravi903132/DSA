@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	int n;
+	Scanner k=new Scanner(System.in);
+	n=k.nextInt();
+	int[] a=new int[n];
+	for(int i=0;i<n;i++)
+	{
+	    a[i]=k.nextInt();
+	}
+	
+    int d=0,ans=-1;
+    if(a[0]==0)
+    {
+        System.out.println(ans);
+    }
+    if(n==1)
+    {
+        System.out.println(d);
+    }
+    int range=a[0],count=0,jump=0;
+    for(int i=0;i<n;i++)
+    {
+        count=Math.max(count,i+a[i]);
+        if(i==range)
+        {
+            range=count;
+            jump++;
+        }
+        if(range>=n-1)
+        {
+            System.out.println(jump+1);
+        }
+    }
+   // System.out.println(ans);
+	}
+}
