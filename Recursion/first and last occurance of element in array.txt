@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void occurance(int arr[],int idx,int key,int n)
+{
+    static int first=-1;
+    static int last=-1;
+    if(idx==n)
+    {
+        cout<<first<<endl;
+        cout<<last;
+        return;
+    }
+        if(arr[idx]==key)
+        {
+            if(first==-1)
+            {
+                first=idx;
+            }
+            else
+            {
+                last=idx;
+            }
+        }
+    
+    occurance(arr,idx+1,key,n);
+}
+int main()
+{
+    
+    int n;
+    cin>>n;
+    int key;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Enter the key";
+    cin>>key;
+    occurance(arr,0,key,n);
+}

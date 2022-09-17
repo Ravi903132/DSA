@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void remove(string s,int idx,string newstr)
+{
+    if(idx==s.length())
+    {
+        cout<<newstr;
+        return;
+    }
+    static bool map[26];
+    char curr=s.at(idx);
+    if(map[curr-'a']==true)
+    {
+        remove(s,idx+1,newstr);
+    }
+    else
+    {
+        newstr=newstr+curr;
+        map[curr-'a']=true;
+        remove(s,idx+1,newstr);
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    remove(s,0," ");
+}

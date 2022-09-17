@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void move(string s,int idx,int count,string newstr)
+{
+    if(idx==s.length())
+    {
+        for(int i=0;i<count;i++)
+        {
+            newstr=newstr+'a';
+        }
+        cout<<newstr;
+        return;
+    }
+    char c=s.at(idx);
+    if(c=='a')
+    {
+        count++;
+        move(s,idx+1,count,newstr);
+    }
+    else
+    {
+        newstr=newstr+c;
+        move(s,idx+1,count,newstr);
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    move(s,0,0," ");
+}
